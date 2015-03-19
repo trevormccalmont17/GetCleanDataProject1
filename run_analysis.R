@@ -69,4 +69,5 @@ names(dataFull) <- columnLabels
 # 5. Create new tidy data set with the average of each variable for each activity and subject
 
 tidyFull <- aggregate(dataFull[4:67], list(dataFull$Subject, dataFull$Activity), mean)
+names(tidyFull)[1:2] = c("Subject", "Activity")
 write.table(tidyFull, "tidyData.txt", row.names=FALSE)
